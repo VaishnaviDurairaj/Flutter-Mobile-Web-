@@ -1,0 +1,31 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:get/get.dart';
+import '../lib/controllers/object_controller.dart';
+import '../lib/services/api_service.dart';
+import '../lib/models/object_model.dart';
+
+class MockApiService extends Mock implements ApiService {}
+
+void main() {
+  late ObjectController controller;
+  late MockApiService mockApi;
+
+  setUp(() {
+    mockApi = MockApiService();
+    Get.put<ApiService>(mockApi);
+    controller = ObjectController();
+  });
+
+  test('fetchObjects loads list successfully', () async {
+    final obj = ObjectModel(id: '1', name: 'Test', data: {'k':'v'});
+    when(mockApi.getObjects(page: 1, limit: 20)).thenAnswer((_) async => [obj]);
+
+    await controller.fetchObjects();
+
+    expect(controller.objects, [obj]);
+    verify(mockApi.getObjects(page:1, limit:20)).called(1);
+  });
+
+  // Additional tests can be written for login, error handling, etc.
+}
