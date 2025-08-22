@@ -1,0 +1,29 @@
+├── main.dart
+├── bindings/
+│   ├── home_binding.dart
+│   └── auth_binding.dart
+├── controllers/
+│   ├── auth_controller.dart
+│   └── object_controller.dart
+├── services/
+│   ├── firebase_auth_service.dart
+│   └── api_service.dart
+├── models/
+│   └── object_model.dart
+├── views/
+│   ├── auth/
+│   │   ├── login_screen.dart
+│   │   └── otp_screen.dart
+│   ├── home/
+│   │   ├── object_list_screen.dart
+│   │   ├── object_detail_screen.dart
+│   │   ├── object_form_screen.dart
+│   │   └── widgets/
+│   │       ├── loading_widget.dart
+│   │       └── error_widget.dart
+└── utils/
+    └── validators.dart
+
+
+
+
