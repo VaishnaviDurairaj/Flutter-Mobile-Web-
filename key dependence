@@ -1,0 +1,13 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^2.0.0
+  firebase_auth: ^4.0.0
+  http: ^0.14.0
+  get: ^4.6.5
+  flutter_web_plugins:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mockito: ^5.0.17
+  get_test: any
